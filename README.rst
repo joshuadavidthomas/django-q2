@@ -5,7 +5,7 @@ A multiprocessing distributed task queue for Django
 
 ::
 
-    Django Q2 is a fork of Django Q. Big thanks to Ilan Steemers for starting this project. Unfortunately, development has stalled since June 2021. Django Q2 is the new updated version of Django Q, with dependencies updates, docs updates and several bug fixes. Original repository: https://github.com/Koed00/django-q
+Django Q2 is a fork of Django Q. Big thanks to Ilan Steemers for starting this project. Unfortunately, development has stalled since June 2021. Django Q2 is the new updated version of Django Q, with dependencies updates, docs updates and several bug fixes. Original repository: https://github.com/Koed00/django-q
 
 Features
 ~~~~~~~~
@@ -106,7 +106,7 @@ Management Commands
 
 ::
 
-    For the management commands to work, you will need to install Blessed: <https://github.com/jquast/blessed>
+For the management commands to work, you will need to install Blessed: <https://github.com/jquast/blessed>
 
 
 Start a cluster with::
