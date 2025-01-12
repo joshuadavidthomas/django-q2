@@ -2,7 +2,6 @@ from datetime import datetime, timedelta
 from keyword import iskeyword
 
 # Django
-from django import get_version
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import Q
@@ -15,7 +14,6 @@ from django.utils.translation import gettext_lazy as _
 
 # External
 from picklefield import PickledObjectField
-from picklefield.fields import dbsafe_decode
 
 # Local
 from django_q.conf import croniter
@@ -59,7 +57,7 @@ class Task(models.Model):
                 .exclude(success=False)
                 .values_list("result", flat=True)
             )
-        return decode_results(values)
+        return values
 
     def group_result(self, failures=False):
         if self.group:
@@ -356,11 +354,3 @@ class OrmQ(models.Model):
         app_label = "django_q"
         verbose_name = _("Queued task")
         verbose_name_plural = _("Queued tasks")
-
-
-# Backwards compatibility for Django 1.7
-def decode_results(values):
-    if get_version().split(".")[1] == "7":
-        # decode values in 1.7
-        return [dbsafe_decode(v) for v in values]
-    return values
