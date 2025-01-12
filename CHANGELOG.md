@@ -1,5 +1,10 @@
 # Changelog
 
+## [v1.7.5](https://github.com/django-q2/django-q2/tree/v1.7.5) (2025-01-12)
+
+- perf: avoid checking success tasks when save limit is disabled https://github.com/django-q2/django-q2/pull/255
+- Fix install path for CHANGELOG.md https://github.com/django-q2/django-q2/pull/258
+
 ## [v1.7.4](https://github.com/django-q2/django-q2/tree/v1.7.4) (2024-11-03)
 
 - Decrease the MAX_RSS set in test_cluster::test_max_rss https://github.com/django-q2/django-q2/pull/240
