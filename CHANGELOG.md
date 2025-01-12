@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.7.6](https://github.com/django-q2/django-q2/tree/v1.7.6) (2025-01-12)
+
+- Make poetry version fixed in CI https://github.com/django-q2/django-q2/pull/260
+
 ## [v1.7.5](https://github.com/django-q2/django-q2/tree/v1.7.5) (2025-01-12)
 
 - perf: avoid checking success tasks when save limit is disabled https://github.com/django-q2/django-q2/pull/255
