@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.8.0](https://github.com/django-q2/django-q2/tree/v1.7.6) (2025-04-25)
+
+- Delete deprecated imports and unwrapping https://github.com/django-q2/django-q2/pull/261
+- Remove disque from CI https://github.com/django-q2/django-q2/pull/270
+- Avoid creating task run on Scheduler creation https://github.com/django-q2/django-q2/pull/268
+- Update tested versions, add python 3.13 support and django 5.2 support. Drop python 3.8 support https://github.com/django-q2/django-q2/pull/271
+- Move timeout function from ORM broker into class to allow easy customization https://github.com/django-q2/django-q2/pull/274
+
 ## [v1.7.6](https://github.com/django-q2/django-q2/tree/v1.7.6) (2025-01-12)
 
 - Make poetry version fixed in CI https://github.com/django-q2/django-q2/pull/260
