@@ -1,6 +1,11 @@
 # Changelog
 
-## [v1.8.0](https://github.com/django-q2/django-q2/tree/v1.7.6) (2025-04-25)
+## [v1.9.0](https://github.com/django-q2/django-q2/tree/v1.9.0) (2025-12-04)
+
+- Django 6.0 support https://github.com/django-q2/django-q2/pull/307
+- Fix to make tests work with redis-py > 5 https://github.com/django-q2/django-q2/pull/282
+
+## [v1.8.0](https://github.com/django-q2/django-q2/tree/v1.8.0) (2025-04-25)
 
 - Delete deprecated imports and unwrapping https://github.com/django-q2/django-q2/pull/261
 - Remove disque from CI https://github.com/django-q2/django-q2/pull/270
