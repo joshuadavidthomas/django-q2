@@ -1,5 +1,15 @@
 # Changelog
 
+## [v1.11.0](https://github.com/django-q2/django-q2/tree/v1.11.0) (2026-08-10)
+
+- AttributeError when start_event is None, and guard process faster stop (#305) https://github.com/django-q2/django-q2/pull/305
+- Add croniter as optional extra. (#336) https://github.com/django-q2/django-q2/pull/336
+- Migrate poetry to uv (#337) https://github.com/django-q2/django-q2/pull/337
+- Add support for python 3.13 and 3.14 (#338) https://github.com/django-q2/django-q2/pull/338
+- Add django 6.1 support (#340) https://github.com/django-q2/django-q2/pull/340
+- Postpone SECRET_KEY evaluation to the qcluster command execution (#332) https://github.com/django-q2/django-q2/pull/332
+
+
 ## [v1.10.0](https://github.com/django-q2/django-q2/tree/v1.10.0) (2026-05-01)
 
 - fix: Fix incorrect signal import (#308) https://github.com/django-q2/django-q2/pull/308
