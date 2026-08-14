@@ -6,6 +6,16 @@ on:
   pull_request:
     branches:
       - master
+
+env:
+  MONGO_HOST: "127.0.0.1"
+  REDIS_HOST: "127.0.0.1"
+  AWS_ENDPOINT_URL: http://localhost:4566
+  AWS_REGION: "us-east-1"
+  AWS_ACCESS_KEY_ID: "test"
+  AWS_SECRET_ACCESS_KEY: "test"
+  AWS_DEFAULT_REGION: "us-east-1"
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -68,6 +78,18 @@ jobs:
         ports:
           - 6379:6379
         options: --entrypoint redis-server
+      aws:
+        image: ministackorg/ministack:1.4.16
+        env:
+          SERVICES: sqs
+          MINISTACK_HOST: aws
+        # options: >-
+        #   --health-cmd "wget -qO- http://localhost:4566/_ministack/ready || exit 1"
+        #   --health-interval 2s
+        #   --health-retries 15
+        #   --health-timeout 5s
+        ports:
+          - 4566:4566
     steps:
         - uses: actions/checkout@v3
         - name: Set up Python ${{ matrix.python-version }}
@@ -79,12 +101,11 @@ jobs:
             python -m pip install uv==0.12.1
             uv sync --extra testing --python ${{ matrix.python-version }}
             uv pip install "django~=${{ matrix.django }}a1"
+        - name: Create SQS queue
+          run: aws sqs create-queue --queue-name testing
         - name: Run Tests
           run: |
             uv run pytest --cov=./django_q --cov-report=xml
-          env:
-            MONGO_HOST: "127.0.0.1"
-            REDIS_HOST: "127.0.0.1"
         - name: Upload to coveralls
           run: |
             python -m pip install coveralls
