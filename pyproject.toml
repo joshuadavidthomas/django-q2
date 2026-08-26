@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "django-q2"
-version = "1.11.0"
+version = "1.11.1"
 packages = [
     { include = "django_q" },
 ]

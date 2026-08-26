@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.11.1](https://github.com/django-q2/django-q2/tree/v1.11.1) (2026-08-26)
+
+- Swap localstorage to ministack (#343) https://github.com/django-q2/django-q2/pull/343
+- Show test coverage in github pull request comment (#344) https://github.com/django-q2/django-q2/pull/344
+- Fix cluster requesting hardcoded unix-only fork context (#347) https://github.com/django-q2/django-q2/pull/347
+
 ## [v1.11.0](https://github.com/django-q2/django-q2/tree/v1.11.0) (2026-08-10)
 
 - AttributeError when start_event is None, and guard process faster stop (#305) https://github.com/django-q2/django-q2/pull/305
